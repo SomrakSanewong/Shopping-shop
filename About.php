@@ -9,8 +9,6 @@
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="./assets/css/style.css" rel="stylesheet">
-
-    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
@@ -30,7 +28,9 @@
     <footer class="footer light-background">
         <?php include './footer/footerTop.php' ?>
     </footer>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
     <script>
         document.querySelectorAll('.init-swiper').forEach(function(swiperEl) {
             const configEl = swiperEl.querySelector('.swiper-config') ||

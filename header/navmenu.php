@@ -18,9 +18,10 @@
                 <ul class="list-unstyled m-0 p-0">
                     <li><a href="index.php">Home</a></li>
                     <li><a href="About.php">About</a></li>
-                    <li><a href="index.php">Services</a></li>
-                    <li><a href="index.php">Blog</a></li>
-                    <li><a href="index.php">Contact</a></li>
+                    <li><a href="category.php">Category</a></li>
+                    <li><a href="index.php">Product Details</a></li>
+                    <li><a href="index.php">Cart</a></li>
+                    <li><a href="index.php">Checkout</a></li>
                 </ul>
             </nav>
         </div>
