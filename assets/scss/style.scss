@@ -2235,7 +2235,7 @@ section.account {
 
 /* Price Section */
 .product-price {
-    background: #F9FAFB;
+    background: rgba(140, 13, 79, 0.05); /* พื้นหลัง */
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 25px;
@@ -2277,15 +2277,17 @@ section.account {
     font-weight: 700;
 }
 
+/* In Stock + Items Left */
 .product-price > div:nth-child(3) {
-    color: #059669;
-    font-size: 15px;
-    font-weight: 600;
     display: flex;
     align-items: center;
     gap: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #212529;   /* สีของ In Stock */
 }
 
+/* วงกลมสีเขียว */
 .product-price > div:nth-child(3)::before {
     content: "✓";
     display: inline-flex;
@@ -2298,6 +2300,11 @@ section.account {
     justify-content: center;
     font-size: 12px;
     font-weight: bold;
+}
+
+/* ส่วนของ (24 items left) */
+.product-price > div:nth-child(3) span {
+    color: rgba(33, 37, 41, 0.4); /* #212529 แบบโปร่งใส 40% */
 }
 
 /* Product Short Detail */
@@ -2415,9 +2422,9 @@ section.account {
 }
 
 .product-size-option {
-    min-width: 60px;
+    min-width: 50px;
     height: 50px;
-    border: 2px solid #E5E7EB;
+    border: 1px solid #E5E7EB;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -2431,6 +2438,8 @@ section.account {
 
 .product-size-option:hover {
     border-color: #8B1538;
+    box-shadow: 0 4px 12px rgba(139, 21, 56, 0.20);
+    transform: translateY(-2px);
 }
 
 .product-size-option-active {
@@ -2454,7 +2463,7 @@ section.account {
 .quantity-box {
     display: inline-flex;
     align-items: center;
-    border: 2px solid #E5E7EB;
+    border: 1px solid #E5E7EB;
     border-radius: 8px;
     overflow: hidden;
     background: white;
@@ -2484,6 +2493,35 @@ section.account {
     color: #1a1a1a;
 }
 
+/* ปุ่มลบ/บวก */
+.quantity-btn {
+    width: 45px;
+    height: 40px;
+    background: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 300;
+    color: #666;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* เส้นแบ่ง */
+.quantity-minus {
+    border-right: 1px solid #D1D5DB;
+}
+
+.quantity-plus {
+    border-left: 1px solid #D1D5DB;
+}
+
+/* Hover */
+.quantity-btn:hover {
+    background: #F9FAFB;
+}
+
 /* Action Buttons */
 .product-actions {
     display: flex;
@@ -2496,7 +2534,7 @@ section.account {
     background: #8B1538;
     color: white;
     border: none;
-    padding: 16px 24px;
+    padding: 12px 24px;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 600;
@@ -2518,8 +2556,8 @@ section.account {
     flex: 1;
     background: white;
     color: #8B1538;
-    border: 2px solid #8B1538;
-    padding: 16px 24px;
+    border: 1px solid #8B1538;
+    padding: 12px 24px;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 600;
@@ -2575,29 +2613,36 @@ section.account {
     color: #8B1538;
 }
 
-/* Product Features */
 .product-features {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(210px, 1fr));
+    gap: 25px;
+    align-items: flex-start;
 }
 
 .feature-item {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    padding: 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    gap: 16px;
+
+    padding: 18px 18px;
+    background: none;
+    box-shadow: none;
+    border-radius: 12px;
+
+    min-width: 210px;   /* ⭐ สำคัญมาก – กันไม่ให้คำตก */
+    box-sizing: border-box;
+    transition: all 0.25s ease;
 }
 
 .feature-item:hover {
-    background: #F9FAFB;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.10),
+        0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
+    
 .feature-icon {
     width: 40px;
     height: 40px;
@@ -2613,7 +2658,7 @@ section.account {
 }
 
 .feature-content h6 {
-    margin: 0 0 4px 0;
+    margin: 0 0 2px 0;  /* ลด margin ให้เตี้ยลงนิดนึง */
     font-size: 15px;
     font-weight: 600;
     color: #1a1a1a;
@@ -2625,6 +2670,7 @@ section.account {
     color: #666;
     line-height: 1.4;
 }
+
 
 /* Scroll to Top Button */
 .scroll-to-top {
@@ -2768,9 +2814,6 @@ section.account {
         width: 100%;
     }
     
-    .product-features {
-        grid-template-columns: 1fr;
-    }
     
     .scroll-to-top {
         bottom: 20px;

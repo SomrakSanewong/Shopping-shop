@@ -70,8 +70,9 @@
                 </div>
 
                 <div>
-                    In Stock (24 items left)
+                    In Stock <span>(24 items left)</span>
                 </div>
+
             </div>
             
             <div class="product-short-detail">
