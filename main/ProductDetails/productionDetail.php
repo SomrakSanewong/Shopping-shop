@@ -6,9 +6,9 @@
             <!-- Thumbnail -->
             <div class="thumbnail-list">
                 <img src="assets/imang/test2.jpg" class="thumb active">
+                <img src="assets/imang/test.jpg" class="thumb">
                 <img src="assets/imang/test2.jpg" class="thumb">
-                <img src="assets/imang/test2.jpg" class="thumb">
-                <img src="assets/imang/test2.jpg" class="thumb">
+                <img src="assets/imang/test.jpg" class="thumb">
                 <img src="assets/imang/test2.jpg" class="thumb">
             </div>
 
@@ -111,7 +111,7 @@
 
                 <div class="quantity-box">
                     <button class="quantity-btn quantity-minus">−</button>
-                    <span class="quantity-number">1</span>
+                        <input type="text" class="quantity-number" value="1">
                     <button class="quantity-btn quantity-plus">+</button>
                 </div>
             </div>

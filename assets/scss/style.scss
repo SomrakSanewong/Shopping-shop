@@ -2123,11 +2123,9 @@ section.account {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.main-image-container:hover .zoom-image {
-    transform: scale(2.8);
+    transition: transform 0.15s ease;
+    transform-origin: center center;
+    cursor: zoom-in;
 }
 
 /* Arrow Buttons */
@@ -2487,11 +2485,15 @@ section.account {
 }
 
 .quantity-number {
-    padding: 0 25px;
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    border: none;
     font-weight: 600;
     font-size: 16px;
-    color: #1a1a1a;
+    outline: none;
 }
+
 
 /* ปุ่มลบ/บวก */
 .quantity-btn {
@@ -2822,6 +2824,380 @@ section.account {
         height: 45px;
     }
 }
+
+//--Product description-//
+.features-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-left: 30px;
+
+
+  .sub-title {
+    color: #8c0d4f;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 15px;
+      line-height: 1.6;
+
+      i {
+        color: #8c0d4f;
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+.Product-Description-section{
+  margin-bottom: 50px;
+}
+
+/* สถานะปกติ (ยังไม่กด) */
+.accordion-button {
+    background-color: #ffffff !important;     /* สีพื้นหลังก่อนกด */
+    color: #8c0d4f;                           /* สีตัวอักษร */
+    box-shadow: none !important;
+}
+
+/* ตอนกดแล้ว (active/open) */
+.accordion-button:not(.collapsed) {
+    background-color: #f8e8ef !important;     /* สีหลังจากกด */
+    color: #8c0d4f !important;
+    box-shadow: none !important;
+}
+
+/* ปรับสีลูกศรตอนปิด */
+.accordion-button::after {
+    filter: brightness(0) saturate(100%) invert(28%) sepia(54%) saturate(650%) hue-rotate(308deg) brightness(90%) contrast(85%);
+}
+
+/* ปรับสีลูกศรตอนเปิด */
+.accordion-button:not(.collapsed)::after {
+    filter: brightness(0) saturate(100%) invert(28%) sepia(54%) saturate(650%) hue-rotate(308deg) brightness(90%) contrast(85%);
+}
+
+
+.technical-body {
+    padding: 25px;
+}
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.spec-title {
+    color: #8c0d4f;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.spec-list li {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    padding: 10px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.spec-list li b {
+    font-weight: 700;
+    color: #000;
+}
+
+.spec-list li span {
+    color: #333;
+    opacity: 0.9;
+}
+
+/* โครง 2 คอลัมน์ */
+.rating-summary {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 60px; /* ระยะห่างตามภาพ */
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* กล่องซ้าย (พื้นชมพูอ่อน) */
+.overall-rating-box {
+    background: #faf3f7;
+    padding: 40px 20px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+/* เลข rating ใหญ่ */
+.overall-rating-box h1 {
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #620a35;
+}
+
+/* ดาว */
+.overall-rating-box .stars i {
+    font-size: 24px;
+    color: #ffd500;
+}
+
+/* Based on 42 reviews */
+.overall-rating-box p {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: .75;
+}
+
+/* ────────────────────────────── */
+/* กล่องขวา breakdown ไม่มี background */
+/* ────────────────────────────── */
+
+.rating-breakdown {
+    padding-top: 20px;
+}
+
+/* แถวแต่ละ rating (5 stars, 4 stars...) */
+.rating-breakdown .row-item {
+    display: grid;
+    grid-template-columns: 70px 1fr 30px;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* bar */
+.rating-breakdown .bar {
+    height: 8px;
+    background: #e6e6e6;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.rating-breakdown .bar div {
+    height: 100%;
+    background: #ffd500;
+    border-radius: 20px;
+}
+
+.rating-breakdown span,
+.rating-breakdown .count {
+    font-size: 14px;
+    color: #620a35;
+}
+
+.review-list {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* กล่องรีวิว */
+.review-card {
+    background: #ffffff;
+    padding: 28px 32px;
+    border-radius: 16px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    transition: 0.2s ease-in-out;
+}
+
+.review-card:hover {
+    box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+}
+
+/* แถวบน: รูป + ชื่อ + วันที่ + ดาว */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+/* ซ้าย: โปรไฟล์ */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* รูปโปรไฟล์ */
+.profile img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ชื่อ */
+.profile h6 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* วันที่ */
+.profile .date {
+    margin: 3px 0 0 0;
+    font-size: 13px;
+    color: #777;
+}
+
+/* ดาวขวาบน */
+.rate i {
+    font-size: 18px;
+    color: #ffd500;
+    margin-left: 2px;
+}
+
+/* หัวข้อรีวิว */
+.review-card h5 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #620a35;
+}
+
+/* ข้อความรีวิว */
+.review-card p {
+    margin: 0;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.55;
+}
+
+
+.write-review {
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+/* Title */
+.review-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;   /* ลดลงให้เหมือนภาพ */
+    color: #620a35;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.review-title::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background: #8c0d4f;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+/* Label */
+.label, .write-review label {
+    font-weight: 700;
+    color: #620a35;
+    display: block;
+    margin-bottom: 4px; /* ลดลงเล็กน้อย */
+}
+
+/* Stars */
+.write-stars {
+    margin-top: 6px;   /* ขยับเข้าหาหัวข้อ */
+    margin-bottom: 22px; /* ขยับให้เหมือนภาพ */
+}
+
+.write-stars i {
+    font-size: 28px;
+    color: #d5d5d5;
+    cursor: pointer;
+    transition: 0.15s;
+    margin-right: 4px;
+}
+
+.write-stars i.active,
+.write-stars i.hover {
+    color: #ffd500;
+}
+
+/* Name + Email row */
+.row-inputs {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 22px; /* ระยะลงเหมือนภาพ */
+}
+
+.row-inputs > div {
+    flex: 1;
+}
+
+/* Inputs */
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    margin-top: 4px; /* label → input gap */
+}
+
+/* Review Title */
+.mt-3 {
+    margin-top: 18px !important; /* ลดระยะให้เหมือนภาพ */
+}
+
+/* Textarea */
+textarea.form-control {
+    min-height: 160px;
+}
+
+/* Small description under textarea */
+.write-review p {
+    margin-top: 6px;   /* ขยับขึ้นชิด textarea */
+    font-size: 13px;
+    color: #777;
+}
+
+/* Submit button */
+.submit-review {
+    background: #8c0d4f;
+    color: #fff;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    margin-top: 25px;
+    display: block;
+    margin-left: auto; /* ชิดขวาในกรอบ */
+}
+
+.submit-review:hover {
+    background: #730a42;
+}
+
+
 
 
 
