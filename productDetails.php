@@ -234,6 +234,11 @@
             initQuantity();
             initFavourite();
         });
+
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+        });
+
     </script>
 
 </body>

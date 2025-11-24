@@ -49,8 +49,6 @@
                     <div class="accordion-body technical-body">
 
                         <div class="spec-grid">
-
-                            <!-- LEFT COLUMN -->
                             <div class="spec-column">
                                 <h5 class="spec-title">Technical Specifications</h5>
 
@@ -64,8 +62,6 @@
                                     <li><b>Weight</b><span>250g</span></li>
                                 </ul>
                             </div>
-
-                            <!-- RIGHT COLUMN -->
                             <div class="spec-column">
                                 <h5 class="spec-title">Features</h5>
 
@@ -91,13 +87,7 @@
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body review-section">
-
-                        <!-- ============================
-                            1) RATING SUMMARY (2 columns)
-                        ================================ -->
                         <div class="rating-summary">
-
-                            <!-- LEFT BOX -->
                             <div class="overall-rating-box">
                                 <h1>4.5</h1>
                                 <div class="stars">
@@ -145,13 +135,7 @@
 
                         </div>
 
-
-                        <!-- ==================================
-                            2) REVIEW LIST (COMMENTS)
-                        ===================================== -->
                         <div class="review-list">
-
-                            <!-- Review Item -->
                             <div class="review-card">
                                 <div class="top-section">
                                     <div class="profile">
@@ -175,8 +159,6 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci. Phasellus egestas nisl vitae lectus imperdiet venenatis. Suspendisse vulputate quam diam, et consectetur augue condimentum in.</p>
                             </div>
 
-
-                            <!-- Review 2 -->
                             <div class="review-card">
                                 <div class="top-section">
                                     <div class="profile">
@@ -200,8 +182,6 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci. Phasellus egestas nisl vitae lectus imperdiet venenatis.</p>
                             </div>
 
-
-                            <!-- Review 3 -->
                             <div class="review-card">
                                 <div class="top-section">
                                     <div class="profile">
@@ -228,10 +208,7 @@
                         </div>
 
 
-                        <!-- ================================
-                            3) WRITE A REVIEW FORM
-                        ================================= -->
-                        <div class="write-review">
+                        <form id="review-form" class="write-review">
                             <h5>Write a Review</h5>
 
                             <label>Your Rating</label>
@@ -243,30 +220,31 @@
                                 <i class="fa-solid fa-star" data-value="5"></i>
                             </div>
 
-
                             <div class="row-inputs">
                                 <div>
                                     <label><b>Your Name</b></label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="name" required>
                                 </div>
                                 <div>
                                     <label><b>Your Email</b></label>
-                                    <input type="email" class="form-control">
+                                    <input type="email" class="form-control" name="email" required>
                                 </div>
                             </div>
 
                             <div class="mt-3">
                                 <label><b>Review Title</b></label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="title" required>
                             </div>
 
                             <div class="mt-3">
                                 <label><b>Your Review</b></label>
-                                <textarea rows="4" class="form-control"></textarea>
+                                <textarea rows="4" class="form-control" name="review" required></textarea>
                                 <p>Tell others what you think about this product. Be honest and helpful!</p>
                             </div>
-                            <button class="submit-review"><b>Submit Review</b></button>
-                        </div>
+
+                            <button type="submit" class="submit-review"><b>Submit Review</b></button>
+                        </form>
+
                     </div>
                 </div>
 
