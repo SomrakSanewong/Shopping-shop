@@ -2870,11 +2870,17 @@ textarea.form-control {
   align-items: center;
   gap: 4px;
 }
-.cart-item .cart-price,
+.cart-item .cart-price {
+  text-align: center;
+  font-weight: 600;
+  color: #3e0925;
+  font-size: 1rem;
+}
 .cart-item .cart-total {
   text-align: center;
   font-weight: 600;
   color: #3e0925;
+  font-size: 1.125rem;
 }
 .cart-item del {
   color: rgba(33, 37, 41, 0.4);
@@ -3091,6 +3097,11 @@ textarea.form-control {
 .shipping-block .shipping-option span {
   line-height: 1.4;
   white-space: nowrap;
+}
+
+.summary-total {
+  font-weight: 600;
+  color: #3e0925;
 }
 
 .total {

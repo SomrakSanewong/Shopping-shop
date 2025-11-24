@@ -30,7 +30,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         function initQuantity() {
-            // เลือกทุก cart-qty
             const quantityBoxes = document.querySelectorAll(".cart-qty");
 
             quantityBoxes.forEach((box) => {
@@ -39,27 +38,21 @@
                 const input = box.querySelector(".quantity-number");
 
                 if (!minus || !plus || !input) return;
-
-                // ปุ่มลบ (ล็อก 1)
                 minus.addEventListener("click", () => {
                     let value = parseInt(input.value) || 1;
                     value = Math.max(1, value - 1);
                     input.value = value;
                 });
-
-                // ปุ่มเพิ่ม (ล็อก 99)
                 plus.addEventListener("click", () => {
                     let value = parseInt(input.value) || 1;
                     value = Math.min(99, value + 1);
                     input.value = value;
                 });
 
-                // อนุญาตให้พิมพ์อิสระ แต่ห้ามตัวอักษร
                 input.addEventListener("input", () => {
                     input.value = input.value.replace(/[^0-9]/g, "");
                 });
 
-                // ตรวจสอบเมื่อพิมพ์เสร็จ
                 function validate() {
                     let value = parseInt(input.value);
 
@@ -72,7 +65,6 @@
                     else if (value > 99) input.value = 99;
                 }
 
-                // Enter = validate
                 input.addEventListener("keydown", (e) => {
                     if (e.key === "Enter") {
                         validate();
@@ -80,7 +72,6 @@
                     }
                 });
 
-                // blur = validate
                 input.addEventListener("blur", validate);
             });
         }

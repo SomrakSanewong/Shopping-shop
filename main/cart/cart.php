@@ -1,9 +1,6 @@
 <section class="cart-section section">
     <div class="container cart-grid">
-
-        <!-- ================= CART ITEMS ================= -->
         <div class="cart-left">
-
             <div class="cart-header">
                 <p>Product</p>
                 <div class="cart-head-right">
@@ -14,7 +11,6 @@
             </div>
             <hr>
 
-            <!-- ITEM 1 -->
             <div class="cart-item">
                 <div class="cart-product">
                     <img src="assets/imang/test2.jpg" alt="">
@@ -40,7 +36,6 @@
             </div>
             <hr>
 
-            <!-- ITEM 2 -->
             <div class="cart-item">
                 <div class="cart-product">
                     <img src="assets/imang/test2.jpg" alt="">
@@ -69,7 +64,6 @@
             </div>
             <hr>
 
-            <!-- ITEM 3 -->
             <div class="cart-item">
                 <div class="cart-product">
                     <img src="assets/imang/test2.jpg" alt="">
@@ -95,7 +89,6 @@
             </div>
             <hr>
 
-            <!-- COUPON -->
             <div class="coupon-and-buttons-wrapper">
                 <div class="coupon-box">
                     <input type="text" placeholder="Coupon code">
@@ -109,7 +102,6 @@
             </div>
         </div>
 
-        <!-- ================= ORDER SUMMARY ================= -->
         <div class="cart-right">
             <h4>Order Summary</h4>
             <hr>

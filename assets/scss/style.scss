@@ -3218,11 +3218,17 @@ textarea.form-control {
     gap: 4px;
   }
 
-  .cart-price,
+  .cart-price{
+    text-align: center;
+    font-weight: 600;
+    color: #3e0925;
+    font-size: 1rem;
+  }
   .cart-total {
     text-align: center;
     font-weight: 600;
     color: #3e0925;
+    font-size: 1.125rem;
   }
 
   del {
@@ -3468,6 +3474,11 @@ textarea.form-control {
           white-space: nowrap;
       }
   }
+}
+
+.summary-total{
+  font-weight: 600;
+  color: #3e0925;
 }
 
 .total {
