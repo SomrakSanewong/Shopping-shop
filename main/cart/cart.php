@@ -17,7 +17,7 @@
             <!-- ITEM 1 -->
             <div class="cart-item">
                 <div class="cart-product">
-                    <img src="https://via.placeholder.com/90" alt="">
+                    <img src="assets/imang/test2.jpg" alt="">
                     <div>
                         <b>Lorem ipsum dolor sit amet</b>
                         <p>Color: Black</p>
@@ -31,9 +31,9 @@
                 <div class="cart-price">$89.99</div>
 
                 <div class="cart-qty">
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
+                    <button class="quantity-btn quantity-minus">−</button>
+                    <input type="number" class="quantity-number" value="1">
+                    <button class="quantity-btn quantity-plus">+</button>
                 </div>
 
                 <div class="cart-total">$89.99</div>
@@ -43,7 +43,7 @@
             <!-- ITEM 2 -->
             <div class="cart-item">
                 <div class="cart-product">
-                    <img src="https://via.placeholder.com/90" alt="">
+                    <img src="assets/imang/test2.jpg" alt="">
                     <div>
                         <b>Consectetur adipiscing elit</b>
                         <p>Color: White</p>
@@ -60,9 +60,9 @@
                 </div>
 
                 <div class="cart-qty">
-                    <button>-</button>
-                    <span>2</span>
-                    <button>+</button>
+                    <button class="quantity-btn quantity-minus">−</button>
+                    <input type="number" class="quantity-number" value="1">
+                    <button class="quantity-btn quantity-plus">+</button>
                 </div>
 
                 <div class="cart-total">$129.98</div>
@@ -72,7 +72,7 @@
             <!-- ITEM 3 -->
             <div class="cart-item">
                 <div class="cart-product">
-                    <img src="https://via.placeholder.com/90" alt="">
+                    <img src="assets/imang/test2.jpg" alt="">
                     <div>
                         <b>Sed do eiusmod tempor</b>
                         <p>Color: Blue</p>
@@ -86,9 +86,9 @@
                 <div class="cart-price">$49.99</div>
 
                 <div class="cart-qty">
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
+                    <button class="quantity-btn quantity-minus">−</button>
+                    <input type="number" class="quantity-number" value="1">
+                    <button class="quantity-btn quantity-plus">+</button>
                 </div>
 
                 <div class="cart-total">$49.99</div>
@@ -96,14 +96,16 @@
             <hr>
 
             <!-- COUPON -->
-            <div class="coupon-box">
-                <input type="text" placeholder="Coupon code">
-                <button class="apply">Apply Coupon</button>
-            </div>
+            <div class="coupon-and-buttons-wrapper">
+                <div class="coupon-box">
+                    <input type="text" placeholder="Coupon code">
+                    <button class="apply">Apply Coupon</button>
+                </div>
 
-            <div class="cart-buttons">
-                <button class="update"><i class="bi bi-arrow-clockwise"></i> Update Cart</button>
-                <button class="clear"><i class="bi bi-trash"></i> Clear Cart</button>
+                <div class="cart-buttons">
+                    <button class="update"><i class="bi bi-arrow-clockwise"></i> Update Cart</button>
+                    <button class="clear"><i class="bi bi-trash"></i> Clear Cart</button>
+                </div>
             </div>
         </div>
 
@@ -114,15 +116,27 @@
 
             <div class="summary-row">
                 <p>Subtotal</p>
-                <p><b>$269.96</b></p>
+                <p class="summary-total">$269.96</p>
             </div>
 
             <div class="shipping-block">
-                <p>Shipping</p>
-                <div class="shipping-options">
-                    <label><input type="radio" name="ship" checked> Standard Delivery - $4.99</label>
-                    <label><input type="radio" name="ship"> Express Delivery - $12.99</label>
-                    <label><input type="radio" name="ship"> Free Shipping (Orders over $300)</label>
+                <p class="shipping-title">Shipping</p>
+                
+                <div class="shipping-options-group">
+                    <label class="shipping-option">
+                        <input type="radio" name="ship" checked>
+                        <span>Standard Delivery - $4.99</span>
+                    </label>
+
+                    <label class="shipping-option">
+                        <input type="radio" name="ship">
+                        <span>Express Delivery - $12.99</span>
+                    </label>
+
+                    <label class="shipping-option">
+                        <input type="radio" name="ship">
+                        <span>Free Shipping (Orders over $300)</span>
+                    </label>
                 </div>
             </div>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>cart</title>
 
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -28,16 +28,65 @@
     </footer>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./assets/js/main.js"></script>
     <script>
-        document.querySelectorAll('.init-swiper').forEach(function(swiperEl) {
-            const configEl = swiperEl.querySelector('.swiper-config') ||
-                swiperEl.parentNode.querySelector('.swiper-config');
+        function initQuantity() {
+            // เลือกทุก cart-qty
+            const quantityBoxes = document.querySelectorAll(".cart-qty");
 
-            if (configEl) {
-                const config = JSON.parse(configEl.textContent.trim());
-                new Swiper(swiperEl, config);
-            }
+            quantityBoxes.forEach((box) => {
+                const minus = box.querySelector(".quantity-minus");
+                const plus = box.querySelector(".quantity-plus");
+                const input = box.querySelector(".quantity-number");
+
+                if (!minus || !plus || !input) return;
+
+                // ปุ่มลบ (ล็อก 1)
+                minus.addEventListener("click", () => {
+                    let value = parseInt(input.value) || 1;
+                    value = Math.max(1, value - 1);
+                    input.value = value;
+                });
+
+                // ปุ่มเพิ่ม (ล็อก 99)
+                plus.addEventListener("click", () => {
+                    let value = parseInt(input.value) || 1;
+                    value = Math.min(99, value + 1);
+                    input.value = value;
+                });
+
+                // อนุญาตให้พิมพ์อิสระ แต่ห้ามตัวอักษร
+                input.addEventListener("input", () => {
+                    input.value = input.value.replace(/[^0-9]/g, "");
+                });
+
+                // ตรวจสอบเมื่อพิมพ์เสร็จ
+                function validate() {
+                    let value = parseInt(input.value);
+
+                    if (isNaN(value) || input.value.trim() === "") {
+                        input.value = 1;
+                        return;
+                    }
+
+                    if (value < 1) input.value = 1;
+                    else if (value > 99) input.value = 99;
+                }
+
+                // Enter = validate
+                input.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter") {
+                        validate();
+                        input.blur();
+                    }
+                });
+
+                // blur = validate
+                input.addEventListener("blur", validate);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initQuantity();
         });
     </script>
 
