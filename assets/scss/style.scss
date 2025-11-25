@@ -3644,6 +3644,676 @@ textarea.form-control {
   }
 }
 
+/* ==========================================
+   CHECKOUT — Updated to match UI exactly
+========================================== */
+
+.checkout-section {
+  padding: 40px 0;
+}
+
+.checkout-section .container {
+  display: grid;
+  grid-template-columns: 60% 40%;   /* แก้จาก 65% / 35% */
+  gap: 42px;
+  align-items: start;
+}
+
+
+/* ===================================================
+   LEFT
+=================================================== */
+.checkout-left {
+  min-width: 0;
+  padding-right: 20px;   /* เพิ่มให้ดูโปรสมดุลและเหมือนภาพ */
+
+  /* ---------- STEPPER ---------- */
+  .stepper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 4px; /* ลดลงให้เส้นไม่ลอยเกิน */
+  }
+
+  .step {
+    text-align: center;
+    min-width: 58px;
+
+    .circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #d9d9d9;
+      color: #333;
+      font-size: 17px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      transition: .2s ease;
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    &.active {
+      .circle {
+        background: #8c0d4f;
+        color: #fff;
+        box-shadow: 0 0 0 6px rgba(140, 13, 79, 0.15);
+      }
+
+      p {
+        color: #8c0d4f;
+        font-weight: 700;
+      }
+    }
+
+    &.done {
+      .circle {
+        background: #5a0c35;
+        color: #fff;
+        box-shadow: 0 0 0 6px rgba(90, 12, 53, 0.18);
+      }
+
+      p {
+        color: #5a0c35;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .line {
+    flex: 1;
+    height: 2px;
+    background: #e3c7d3;
+    margin: 0 25px;
+    transform: translateY(-14px); /* ปรับให้เส้นชิดวงกลมเหมือน UI */
+  }
+
+  .step.done + .line {
+    background: #8c0d4f;
+  }
+  .step.active + .line {
+    background: #cfa6b9;
+  }
+
+  /* ---------- Step Page ---------- */
+  .step-page {
+    display: none;
+    animation: fadeIn .18s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .step-page > h3 {
+    font-size: 26px;
+    color: #5a0c35;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .step-page > p {
+    color: #666;
+    margin-bottom: 26px;
+    font-size: 15px;
+  }
+
+  /* ---------- Form ---------- */
+  #checkoutForm {
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 10px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 700;
+      color: #5a0c35;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    input,
+    select {
+      width: 100%;
+      height: 50px;
+      padding: 12px 14px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background: #fff;
+      font-size: 15px;
+      transition: .15s ease;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: #8c0d4f;
+      box-shadow: 0 0 0 3px rgba(140, 13, 79, 0.15);
+    }
+
+    /* ---------- Checkbox ---------- */
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      margin-top: 4px;
+
+      input {
+        width: 20px;
+        height: 20px;
+        accent-color: #8c0d4f;
+      }
+    }
+
+    /* ---------- Payment Title ---------- */
+#step-3 {
+  h3 {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: #5a0c35;
+  }
+  p {
+    margin-bottom: 22px;
+    color: #7a5970;
+  }
+}
+
+/* ---------- BIG BOX (Credit / Debit Card) ---------- */
+.payment-box {
+  padding: 15px;
+  border-radius: 14px;
+  border: 1px solid #ddd;         /* ⭐ ยังไม่เลือก → ขอบเทา */
+  background: #fff !important;
+  margin-bottom: 18px;
+
+  &:hover {
+    background: #fff !important;  /* 🔥 ยกเลิก hover สีชมพู */
+  }
+
+  &.active {
+    border: 2px solid #8c0d4f !important; /* ⭐ เลือก → ขอบชมพู */
+  }
+
+  hr {
+    display: none; /* ⭐ ซ่อนตอนยังไม่เลือก */
+  }
+
+  &.active hr {
+    display: block; /* ⭐ แสดงตอนเลือก */
+    border-color: #e6bdd0;
+  }
+
+  .payment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+
+  label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #5a0c35;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+
+    input[type="radio"] {
+      width: 20px;
+      height: 20px;
+      accent-color: #8c0d4f;
+      cursor: pointer;
+    }
+  }
+
+  .icons {
+    font-size: 22px;
+    color: #5a0c35;
+    display: flex;
+    gap: 10px;
+  }
+
+  .cc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    input {
+      height: 50px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 15px;
+    }
+
+    .row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+  }
+}
+
+/* ---------- Small Payment Options (PayPal, Apple Pay) ---------- */
+.payment-option {
+  padding: 15px 15px;
+  border: 1px solid #ddd;      /* ⭐ ยังไม่เลือก */
+  border-radius: 14px;
+  margin-bottom: 14px;
+  background: #fff !important;
+  cursor: pointer;
+
+  &:hover {
+    background: #fff !important;
+  }
+
+  &.active {
+    border: 2px solid #8c0d4f !important; /* ⭐ เลือก */
+  }
+
+  hr {
+    display: none; /* ⭐ ซ่อน hr ตอนยังไม่เลือก */
+  }
+
+  &.active hr {
+    display: block;
+    border-color: #ddd8da;
+  }
+
+
+  .payment-option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    color: #5a0c35;
+    cursor: pointer;
+
+    input[type="radio"] {
+      width: 20px;
+      height: 20px;
+      accent-color: #8c0d4f;
+      cursor: pointer;
+    }
+  }
+
+  .icon {
+    font-size: 24px;
+    color: #5a0c35;
+  }
+
+  .payment-info {
+    display: none;
+    margin-top: 12px;
+    
+    border-radius: 10px;
+    
+    
+    font-size: 14px;
+    line-height: 1.5;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+    .review-box {
+  background: #fff;
+  padding: 22px 24px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  margin-bottom: 18px;
+
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+
+    h4 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #5a0c35;
+      margin: 0;
+    }
+
+    .edit-link {
+      color: #8c0d4f;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  p {
+    margin: 4px 0;
+    color: #333;
+  }
+}
+
+.two-buttons {
+  display: flex;
+  justify-content: space-between; /* ทำให้ปุ่มซ้าย–ขวาแยกออก */
+  align-items: center;
+  margin-top: 28px;  /* ระยะด้านบน */
+  margin-bottom: 20px; /* ระยะด้านล่าง */
+}
+
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 26px; /* เว้นช่องบน–ล่างเหมือนภาพ */
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #8c0d4f;
+    cursor: pointer;
+  }
+
+  label {
+    font-size: 14px;
+    color: #5a0c35;
+    cursor: pointer;
+
+    a {
+      color: #8c0d4f;
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+.place-order-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+    /* ปุ่มทั้งหมด — ทำให้กดง่าย */
+.btn-primary,
+.btn-secondary,
+.btn-success {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;          
+  padding: 0 28px;           
+  border-radius: 14px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: 
+    background .2s ease,
+    transform .08s ease,
+    box-shadow .2s ease;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.btn-primary:active,
+.btn-secondary:active,
+.btn-success:active {
+  transform: scale(0.97);
+}
+
+.btn-primary:hover {
+  background: #740b43;
+}
+.btn-secondary:hover {
+  background: #efe3e9;
+}
+.btn-success:hover {
+  background: #248437;
+}
+
+
+    #step-1 .btn-primary {
+      float: right;
+      margin-top: 14px;
+    }
+
+    .btn-primary {
+      background: #8c0d4f;
+      color: #fff;
+    }
+
+    .btn-success {
+      background: #2e9b43;
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #5a0c35;
+      border: 1px solid #e8d6dd;
+    }
+  }
+}
+
+/* ===================================================
+   RIGHT — ORDER SUMMARY
+=================================================== */
+.checkout-right {
+  
+  .summary-card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.10);
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #5a0c35;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 18px;
+  }
+
+  .summary-item {
+    padding: 16px 0;
+    display: flex;
+    gap: 16px;
+    border-bottom: 1px solid #eee;
+
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 12px;
+      background: #f7f7f7;
+      object-fit: cover;
+    }
+
+    h5 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    p {
+      margin: 4px 0;
+      font-size: 13px;
+      color: #666;
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: 800;
+      color: #8c0d4f;
+    }
+  }
+
+  .summary-row,
+  .summary-total {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 14px;
+  }
+
+  .summary-total {
+    border-top: 1px dashed #ccc;
+    padding-top: 14px;
+    margin-top: 8px;
+    font-size: 18px;
+
+    span {
+      color: #8c0d4f;
+      font-weight: 800;
+    }
+  }
+
+  /* Promo Box — exactly like image */
+  .promo-box {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+
+    input {
+      flex: 1;
+      height: 44px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 0 12px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 0 18px;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #c7a9b8;
+      cursor: pointer;
+      font-weight: 800;
+      color: #8c0d4f;
+    }
+  }
+
+  .secure {
+    margin-top: 14px;
+    color: #2c8d3b;
+    font-weight: 700;
+    font-size: 14px;
+  }
+}
+
+/* ================================
+   ปุ่มหลัก (แค่ปุ่ม action ขนาดใหญ่เท่านั้น)
+   ================================ */
+
+.checkout-left #checkoutForm .btn-primary,
+.checkout-left #checkoutForm .btn-secondary,
+.checkout-left #checkoutForm .btn-success {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;        /* กลับมาใกล้ภาพเดิม */
+  padding: 0 24px;
+  border-radius: 12px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    background .2s ease,
+    transform .08s ease,
+    box-shadow .2s ease;
+
+  box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+}
+
+/* Active feedback */
+.checkout-left #checkoutForm 
+  .btn-primary:active,
+  .btn-secondary:active,
+  .btn-success:active {
+    transform: scale(0.98);
+}
+
+/* Hover */
+.checkout-left #checkoutForm .btn-primary:hover {
+  background: #740b43;
+}
+.checkout-left #checkoutForm .btn-secondary:hover {
+  background: #efe3e9;
+}
+.checkout-left #checkoutForm .btn-success:hover {
+  background: #248437;
+}
+
+/* ================================
+   ปุ่มเล็ก เช่น Review Order, Apply
+   — ห้ามขยาย (คงขนาดปกติ)
+   ================================ */
+
+button,
+.btn,
+.promo-box button {
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: none !important;
+}
+
+
+
+/* ===================================================
+   Responsive
+=================================================== */
+@media (max-width: 1024px) {
+  .checkout-section .container {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 @media (max-width: 992px) {

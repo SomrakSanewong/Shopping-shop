@@ -21,7 +21,7 @@
                     <li><a href="category.php">Category</a></li>
                     <li><a href="productDetails.php">Product Details</a></li>
                     <li><a href="cart.php">Cart</a></li>
-                    <li><a href="index.php">Checkout</a></li>
+                    <li><a href="checkout.php">Checkout</a></li>
                 </ul>
             </nav>
         </div>
