@@ -1116,6 +1116,112 @@ section.account .profile-sidebar .profile-header .profile-info .profile-bonus i 
   color: #8c0d4f;
   margin-right: 8px;
 }
+section.account .profile-nav .nav-item {
+  margin-bottom: 4px;
+}
+section.account .profile-nav .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: #212529;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  width: 100%;
+}
+section.account .profile-nav .nav-link:active {
+  background-color: #8c0d4f;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+section.account .profile-nav .nav-link:active i {
+  color: #ffffff;
+}
+section.account .profile-nav .nav-link .badge {
+  margin-left: auto;
+  background-color: #8c0d4f;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 16px;
+}
+section.account .profile-nav .nav-link i {
+  margin-right: 12px;
+  font-size: 18px;
+  color: color-mix(in srgb, #212529, transparent 20%);
+  transition: all 0.3s ease;
+}
+section.account .profile-content .tab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+section.account .profile-content .tab-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+section.account .profile-content .tab-header .tab-filters {
+  margin-top: 16px;
+  width: 100%;
+}
+section.account .profile-content .tab-header .tab-filters .dropdown {
+  position: relative;
+}
+section.account .profile-content .tab-header .tab-filters .dropdown .btn {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+}
+section.account .profile-content .tab-header .tab-filters .dropdown .btn i {
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+section.account .profile-content .tab-header .tab-filters .dropdown .dropdown-menu {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 8px;
+  min-width: 100%;
+}
+section.account .profile-content .tab-header .tab-filters .dropdown .dropdown-menu .dropdown-item {
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+section.account .profile-content .orders-table {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+section.account .profile-content .orders-table .table-header {
+  padding: 16px 24px;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+section.account .profile-content .orders-table .table-header .sort-header {
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+section.account .profile-content .orders-table .order-items .order-item {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
 
 .section {
   color: #212529;
@@ -2305,7 +2411,7 @@ section.account .profile-sidebar .profile-header .profile-info .profile-bonus i 
   background: none;
   box-shadow: none;
   border-radius: 12px;
-  min-width: 210px; /* ⭐ สำคัญมาก – กันไม่ให้คำตก */
+  min-width: 210px;
   box-sizing: border-box;
   transition: all 0.25s ease;
 }
@@ -2330,7 +2436,7 @@ section.account .profile-sidebar .profile-header .profile-info .profile-bonus i 
 }
 
 .feature-content h6 {
-  margin: 0 0 2px 0; /* ลด margin ให้เตี้ยลงนิดนึง */
+  margin: 0 0 2px 0;
   font-size: 15px;
   font-weight: 600;
   color: #1a1a1a;
@@ -2373,103 +2479,6 @@ section.account .profile-sidebar .profile-header .profile-info .profile-bonus i 
   display: flex;
 }
 
-@media (max-width: 1400px) {
-  .Production-Detail .container {
-    grid-template-columns: 90px 430px 1fr;
-    gap: 25px;
-  }
-  .main-image-wrapper {
-    width: 430px;
-    height: 430px;
-  }
-  .thumbnail-list .thumb {
-    width: 90px;
-    height: 90px;
-  }
-}
-@media (max-width: 1200px) {
-  .Production-Detail .container {
-    grid-template-columns: 80px 340px 1fr;
-    gap: 20px;
-  }
-  .main-image-wrapper {
-    width: 340px;
-    height: 340px;
-  }
-  .thumbnail-list .thumb {
-    width: 80px;
-    height: 80px;
-  }
-  .detail h1 {
-    font-size: 28px;
-  }
-  .product-features {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-}
-@media (max-width: 992px) {
-  .Production-Detail .container {
-    grid-template-columns: 100px 592px;
-    gap: 20px;
-  }
-  .main-image-wrapper {
-    width: 592px;
-    height: 592px;
-  }
-  .thumbnail-list .thumb {
-    width: 100px;
-    height: 100px;
-  }
-  .detail {
-    grid-column: 1/-1;
-    padding-left: 0;
-  }
-}
-@media (max-width: 768px) {
-  .Production-Detail .container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .thumbnail-list {
-    order: 2;
-    flex-direction: row;
-    overflow-x: auto;
-    padding-bottom: 10px;
-  }
-  .thumbnail-list .thumb {
-    width: 85px;
-    height: 85px;
-    flex-shrink: 0;
-  }
-  .main-image-wrapper {
-    order: 1;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  .main-image-container {
-    width: 100%;
-    height: 100%;
-  }
-  .detail {
-    order: 3;
-  }
-  .product-actions {
-    flex-direction: column;
-  }
-  .btn-favourite {
-    width: 100%;
-  }
-  .scroll-to-top {
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-  }
-}
 .features-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2503,13 +2512,13 @@ section.account .profile-sidebar .profile-header .profile-info .profile-bonus i 
 }
 
 .accordion-button {
-  background-color: #ffffff !important; /* สีพื้นหลังก่อนกด */
-  color: #8c0d4f; /* สีตัวอักษร */
+  background-color: #ffffff !important;
+  color: #8c0d4f;
   box-shadow: none !important;
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: #f8e8ef !important; /* สีหลังจากกด */
+  background-color: #f8e8ef !important;
   color: #8c0d4f !important;
   box-shadow: none !important;
 }
@@ -2724,7 +2733,8 @@ section.account .profile-sidebar .profile-header .profile-info .profile-bonus i 
   bottom: 0;
 }
 
-.label, .write-review label {
+.label,
+.write-review label {
   font-weight: 700;
   color: #620a35;
   display: block;
@@ -3179,95 +3189,29 @@ textarea.form-control {
   opacity: 1;
 }
 
-@media (max-width: 992px) {
-  .cart-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-  .cart-left,
-  .cart-right {
-    width: 100%;
-  }
-}
-@media (max-width: 768px) {
-  .cart-left,
-  .cart-right {
-    padding: 18px;
-    border-radius: 10px;
-  }
-  .cart-header {
-    grid-template-columns: 1fr 1fr;
-  }
-  .cart-item {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  .cart-product {
-    flex-wrap: wrap;
-  }
-  .cart-qty {
-    margin-left: 0;
-  }
-  .coupon-and-buttons-wrapper {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 15px;
-  }
-  .cart-buttons {
-    justify-content: space-between;
-  }
-}
-@media (max-width: 480px) {
-  .checkout-btn {
-    font-size: 15px;
-    padding: 12px;
-  }
-  .continue {
-    font-size: 13px;
-  }
-  .cart-buttons {
-    flex-direction: column;
-  }
-  .coupon-box {
-    flex-direction: column;
-  }
-  .coupon-box input {
-    width: 100%;
-  }
-  .coupon-box .apply {
-    width: 100%;
-    text-align: center;
-  }
-}
-/* ==========================================
-   CHECKOUT — Updated to match UI exactly
-========================================== */
 .checkout-section .container {
   display: grid;
-  grid-template-columns: 1fr 380px; /* 🔥 ขวาเล็กลงแบบเนียบ */
+  grid-template-columns: 1fr 380px;
   gap: 42px;
   align-items: start;
 }
 
 .checkout-right {
   position: sticky;
-  top: 20px; /* ระยะจากขอบบนตามที่ต้องการ */
-  height: fit-content; /* ทำให้สูงเท่าที่เนื้อหามี */
+  top: 20px;
+  height: fit-content;
 }
 
-/* ===================================================
-   LEFT
-=================================================== */
 .checkout-left {
   min-width: 0;
-  padding-right: 20px; /* เพิ่มให้ดูโปรสมดุลและเหมือนภาพ */
+  padding-right: 20px;
   /* ---------- STEPPER ---------- */
 }
 .checkout-left .stepper {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  padding-top: 4px; /* ลดลงให้เส้นไม่ลอยเกิน */
+  padding-top: 4px;
 }
 .checkout-left .step {
   text-align: center;
@@ -3315,7 +3259,7 @@ textarea.form-control {
   height: 2px;
   background: #e3c7d3;
   margin: 0 25px;
-  transform: translateY(-14px); /* ปรับให้เส้นชิดวงกลมเหมือน UI */
+  transform: translateY(-14px);
 }
 .checkout-left .step.done + .line {
   background: #8c0d4f;
@@ -3368,9 +3312,9 @@ textarea.form-control {
   -moz-appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 20px center; /* ห่างจากขอบขวา 20px */
+  background-position: right 20px center;
   background-size: 12px;
-  padding-right: 45px; /* เว้นพื้นที่สำหรับลูกศร */
+  padding-right: 45px;
 }
 .checkout-left #checkoutForm label {
   font-weight: 700;
@@ -3429,21 +3373,21 @@ textarea.form-control {
 .checkout-left #checkoutForm .payment-box {
   padding: 15px;
   border-radius: 14px;
-  border: 1px solid #ddd; /* ⭐ ยังไม่เลือก → ขอบเทา */
+  border: 1px solid #ddd;
   background: #fff !important;
   margin-bottom: 18px;
 }
 .checkout-left #checkoutForm .payment-box:hover {
-  background: #fff !important; /* 🔥 ยกเลิก hover สีชมพู */
+  background: #fff !important;
 }
 .checkout-left #checkoutForm .payment-box.active {
-  border: 2px solid #8c0d4f !important; /* ⭐ เลือก → ขอบชมพู */
+  border: 2px solid #8c0d4f !important;
 }
 .checkout-left #checkoutForm .payment-box hr {
-  display: none; /* ⭐ ซ่อนตอนยังไม่เลือก */
+  display: none;
 }
 .checkout-left #checkoutForm .payment-box.active hr {
-  display: block; /* ⭐ แสดงตอนเลือก */
+  display: block;
   border-color: #e6bdd0;
 }
 .checkout-left #checkoutForm .payment-box .payment-header {
@@ -3495,7 +3439,7 @@ textarea.form-control {
 }
 .checkout-left #checkoutForm .payment-option {
   padding: 15px 15px;
-  border: 1px solid #ddd; /* ⭐ ยังไม่เลือก */
+  border: 1px solid #ddd;
   border-radius: 14px;
   margin-bottom: 14px;
   background: #fff !important;
@@ -3505,10 +3449,10 @@ textarea.form-control {
   background: #fff !important;
 }
 .checkout-left #checkoutForm .payment-option.active {
-  border: 2px solid #8c0d4f !important; /* ⭐ เลือก */
+  border: 2px solid #8c0d4f !important;
 }
 .checkout-left #checkoutForm .payment-option hr {
-  display: none; /* ⭐ ซ่อน hr ตอนยังไม่เลือก */
+  display: none;
 }
 .checkout-left #checkoutForm .payment-option.active hr {
   display: block;
@@ -3581,16 +3525,16 @@ textarea.form-control {
 }
 .checkout-left #checkoutForm .two-buttons {
   display: flex;
-  justify-content: space-between; /* ทำให้ปุ่มซ้าย–ขวาแยกออก */
+  justify-content: space-between;
   align-items: center;
-  margin-top: 28px; /* ระยะด้านบน */
-  margin-bottom: 20px; /* ระยะด้านล่าง */
+  margin-top: 28px;
+  margin-bottom: 20px;
 }
 .checkout-left #checkoutForm .terms {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 20px 0 26px; /* เว้นช่องบน–ล่างเหมือนภาพ */
+  margin: 20px 0 26px;
 }
 .checkout-left #checkoutForm .terms input[type=checkbox] {
   width: 18px;
@@ -3614,9 +3558,6 @@ textarea.form-control {
 .checkout-left #checkoutForm .place-order-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-}
-.checkout-left #checkoutForm {
-  /* ปุ่มทั้งหมด — ทำให้กดง่าย */
 }
 .checkout-left #checkoutForm .btn-primary,
 .checkout-left #checkoutForm .btn-secondary,
@@ -3681,9 +3622,6 @@ textarea.form-control {
   border-bottom: 1px solid #eee;
   margin-bottom: 18px;
 }
-.checkout-right {
-  /* 🔥 รายการสินค้า */
-}
 .checkout-right .summary-item {
   display: flex;
   gap: 16px;
@@ -3707,9 +3645,6 @@ textarea.form-control {
   font-size: 13px;
   color: #666;
 }
-.checkout-right {
-  /* 🔥 แถวราคา */
-}
 .checkout-right .summary-price-row {
   display: flex;
   gap: 8px;
@@ -3725,9 +3660,6 @@ textarea.form-control {
   font-weight: 900;
   font-size: 15px;
 }
-.checkout-right {
-  /* 🔥 Subtotal / Shipping / Tax */
-}
 .checkout-right .summary-row {
   display: flex;
   justify-content: space-between;
@@ -3737,16 +3669,13 @@ textarea.form-control {
 .checkout-right .summary-row p {
   margin: 0;
 }
-.checkout-right {
-  /* 🔥 Total */
-}
 .checkout-right .summary-total {
   display: flex;
   justify-content: space-between;
   border-top: 1px dashed #ccc;
   margin-top: 16px;
   padding-top: 16px;
-  padding-bottom: 10px; /* 🔥 เว้นช่องล่างเหมือนภาพ */
+  padding-bottom: 10px;
   font-size: 18px;
 }
 .checkout-right .summary-total p {
@@ -3758,13 +3687,10 @@ textarea.form-control {
   color: #3e0925;
   font-weight: 800;
 }
-.checkout-right {
-  /* 🔥 Promo Code Box */
-}
 .checkout-right .promo-box {
   display: flex;
   margin-top: 8px;
-  margin-bottom: 18px; /* ช่องว่างระหว่าง promo กับ secure */
+  margin-bottom: 18px;
 }
 .checkout-right .promo-box input {
   flex: 1;
@@ -3789,34 +3715,28 @@ textarea.form-control {
   background-color: #8c0d4f;
   color: #fff;
 }
-.checkout-right {
-  /* 🔥 Secure Checkout */
-}
 .checkout-right hr {
   margin: 12px 0 18px 0;
 }
 .checkout-right .secure {
   display: flex;
-  justify-content: center; /* 🔥 ตรงกลาง */
+  justify-content: center;
   align-items: center;
   gap: 6px;
   font-size: 14px;
   margin-bottom: 8px;
 }
 .checkout-right .secure i {
-  color: #2c8d3b; /* สีเขียวเฉพาะโล่ */
+  color: #2c8d3b;
   font-size: 16px;
 }
 .checkout-right .secure .secure-checkout {
-  color: #8c0d4f; /* สีชมพูตามภาพ */
+  color: #8c0d4f;
   font-weight: 700;
-}
-.checkout-right {
-  /* Icons row */
 }
 .checkout-right .secure-icons {
   display: flex;
-  justify-content: center; /* 🔥 ให้อยู่กลางเหมือนภาพ */
+  justify-content: center;
   gap: 18px;
   margin-top: 6px;
 }
@@ -3825,16 +3745,13 @@ textarea.form-control {
   color: #3e0925;
 }
 
-/* ================================
-   ปุ่มหลัก (แค่ปุ่ม action ขนาดใหญ่เท่านั้น)
-   ================================ */
 .checkout-left #checkoutForm .btn-primary,
 .checkout-left #checkoutForm .btn-secondary,
 .checkout-left #checkoutForm .btn-success {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px; /* กลับมาใกล้ภาพเดิม */
+  min-height: 48px;
   padding: 0 24px;
   border-radius: 12px;
   font-size: 15px;
@@ -3845,14 +3762,12 @@ textarea.form-control {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Active feedback */
 .checkout-left #checkoutForm .btn-primary:active,
 .btn-secondary:active,
 .btn-success:active {
   transform: scale(0.98);
 }
 
-/* Hover */
 .checkout-left #checkoutForm .btn-primary:hover {
   background: #740b43;
 }
@@ -3865,12 +3780,6 @@ textarea.form-control {
   background: #248437;
 }
 
-/* ================================
-   ปุ่มเล็ก เช่น Review Order, Apply
-   — ห้ามขยาย (คงขนาดปกติ)
-   ================================ */
-button,
-.btn,
 .promo-box button {
   height: 42px;
   padding: 0 16px;
@@ -3880,9 +3789,6 @@ button,
   box-shadow: none !important;
 }
 
-/* ===================================================
-   Responsive
-=================================================== */
 @media (max-width: 1024px) {
   .checkout-section .container {
     grid-template-columns: 1fr;
@@ -3908,6 +3814,30 @@ button,
   }
   .about2 .about-title {
     font-size: 25px;
+  }
+  .Production-Detail .container {
+    grid-template-columns: 100px 592px;
+    gap: 20px;
+  }
+  .main-image-wrapper {
+    width: 592px;
+    height: 592px;
+  }
+  .thumbnail-list .thumb {
+    width: 100px;
+    height: 100px;
+  }
+  .detail {
+    grid-column: 1/-1;
+    padding-left: 0;
+  }
+  .cart-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .cart-left,
+  .cart-right {
+    width: 100%;
   }
 }
 @media (max-width: 991px) {
@@ -4008,6 +3938,96 @@ button,
     opacity: 1;
     visibility: visible;
     background-color: rgba(0, 0, 0, 0.1);
+  }
+  .Production-Detail .container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .thumbnail-list {
+    order: 2;
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  .thumbnail-list .thumb {
+    width: 85px;
+    height: 85px;
+    flex-shrink: 0;
+  }
+  .main-image-wrapper {
+    order: 1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .main-image-container {
+    width: 100%;
+    height: 100%;
+  }
+  .detail {
+    order: 3;
+  }
+  .product-actions {
+    flex-direction: column;
+  }
+  .btn-favourite {
+    width: 100%;
+  }
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+  .cart-left,
+  .cart-right {
+    padding: 18px;
+    border-radius: 10px;
+  }
+  .cart-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cart-item {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .cart-product {
+    flex-wrap: wrap;
+  }
+  .cart-qty {
+    margin-left: 0;
+  }
+  .coupon-and-buttons-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  .cart-buttons {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 480px) {
+  .checkout-btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+  .continue {
+    font-size: 13px;
+  }
+  .cart-buttons {
+    flex-direction: column;
+  }
+  .coupon-box {
+    flex-direction: column;
+  }
+  .coupon-box input {
+    width: 100%;
+  }
+  .coupon-box .apply {
+    width: 100%;
+    text-align: center;
   }
 }
 
