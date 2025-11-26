@@ -3242,15 +3242,17 @@ textarea.form-control {
 /* ==========================================
    CHECKOUT — Updated to match UI exactly
 ========================================== */
-.checkout-section {
-  padding: 40px 0;
-}
-
 .checkout-section .container {
   display: grid;
-  grid-template-columns: 60% 40%; /* แก้จาก 65% / 35% */
+  grid-template-columns: 1fr 380px; /* 🔥 ขวาเล็กลงแบบเนียบ */
   gap: 42px;
   align-items: start;
+}
+
+.checkout-right {
+  position: sticky;
+  top: 20px; /* ระยะจากขอบบนตามที่ต้องการ */
+  height: fit-content; /* ทำให้สูงเท่าที่เนื้อหามี */
 }
 
 /* ===================================================
@@ -3359,6 +3361,16 @@ textarea.form-control {
 }
 .checkout-left #checkoutForm .form-group {
   margin-bottom: 20px;
+}
+.checkout-left #checkoutForm .form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center; /* ห่างจากขอบขวา 20px */
+  background-size: 12px;
+  padding-right: 45px; /* เว้นพื้นที่สำหรับลูกศร */
 }
 .checkout-left #checkoutForm label {
   font-weight: 700;
@@ -3654,9 +3666,6 @@ textarea.form-control {
   border: 1px solid #e8d6dd;
 }
 
-/* ===================================================
-   RIGHT — ORDER SUMMARY
-=================================================== */
 .checkout-right .summary-card {
   background: #fff;
   padding: 28px;
@@ -3672,17 +3681,19 @@ textarea.form-control {
   border-bottom: 1px solid #eee;
   margin-bottom: 18px;
 }
+.checkout-right {
+  /* 🔥 รายการสินค้า */
+}
 .checkout-right .summary-item {
-  padding: 16px 0;
   display: flex;
   gap: 16px;
   border-bottom: 1px solid #eee;
+  padding: 18px 0;
 }
 .checkout-right .summary-item img {
   width: 70px;
   height: 70px;
   border-radius: 12px;
-  background: #f7f7f7;
   object-fit: cover;
 }
 .checkout-right .summary-item h5 {
@@ -3696,58 +3707,122 @@ textarea.form-control {
   font-size: 13px;
   color: #666;
 }
-.checkout-right .summary-item span {
-  font-size: 14px;
-  font-weight: 800;
-  color: #8c0d4f;
+.checkout-right {
+  /* 🔥 แถวราคา */
 }
-.checkout-right .summary-row,
+.checkout-right .summary-price-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+.checkout-right .summary-price-row .qty {
+  color: rgba(33, 37, 41, 0.7);
+  font-weight: 700;
+  font-size: 15px;
+}
+.checkout-right .summary-price-row .price {
+  color: #3e0925;
+  font-weight: 900;
+  font-size: 15px;
+}
+.checkout-right {
+  /* 🔥 Subtotal / Shipping / Tax */
+}
+.checkout-right .summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 14px;
+}
+.checkout-right .summary-row p {
+  margin: 0;
+}
+.checkout-right {
+  /* 🔥 Total */
+}
 .checkout-right .summary-total {
   display: flex;
   justify-content: space-between;
-  margin: 8px 0;
-  font-size: 14px;
-}
-.checkout-right .summary-total {
   border-top: 1px dashed #ccc;
-  padding-top: 14px;
-  margin-top: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  padding-bottom: 10px; /* 🔥 เว้นช่องล่างเหมือนภาพ */
   font-size: 18px;
 }
+.checkout-right .summary-total p {
+  margin: 0;
+  font-weight: 800;
+  color: #3e0925;
+}
 .checkout-right .summary-total span {
-  color: #8c0d4f;
+  color: #3e0925;
   font-weight: 800;
 }
 .checkout-right {
-  /* Promo Box — exactly like image */
+  /* 🔥 Promo Code Box */
 }
 .checkout-right .promo-box {
   display: flex;
-  gap: 8px;
-  margin-top: 16px;
+  margin-top: 8px;
+  margin-bottom: 18px; /* ช่องว่างระหว่าง promo กับ secure */
 }
 .checkout-right .promo-box input {
   flex: 1;
-  height: 44px;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
   padding: 0 12px;
   font-size: 14px;
 }
 .checkout-right .promo-box button {
-  padding: 0 18px;
+  padding: 0 20px;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 0 10px 10px 0;
   border: 1px solid #c7a9b8;
+  border-left: none;
   cursor: pointer;
   font-weight: 800;
   color: #8c0d4f;
+  font-size: 14px;
+}
+.checkout-right .promo-box button:hover {
+  background-color: #8c0d4f;
+  color: #fff;
+}
+.checkout-right {
+  /* 🔥 Secure Checkout */
+}
+.checkout-right hr {
+  margin: 12px 0 18px 0;
 }
 .checkout-right .secure {
-  margin-top: 14px;
-  color: #2c8d3b;
-  font-weight: 700;
+  display: flex;
+  justify-content: center; /* 🔥 ตรงกลาง */
+  align-items: center;
+  gap: 6px;
   font-size: 14px;
+  margin-bottom: 8px;
+}
+.checkout-right .secure i {
+  color: #2c8d3b; /* สีเขียวเฉพาะโล่ */
+  font-size: 16px;
+}
+.checkout-right .secure .secure-checkout {
+  color: #8c0d4f; /* สีชมพูตามภาพ */
+  font-weight: 700;
+}
+.checkout-right {
+  /* Icons row */
+}
+.checkout-right .secure-icons {
+  display: flex;
+  justify-content: center; /* 🔥 ให้อยู่กลางเหมือนภาพ */
+  gap: 18px;
+  margin-top: 6px;
+}
+.checkout-right .secure-icons i {
+  font-size: 22px;
+  color: #3e0925;
 }
 
 /* ================================

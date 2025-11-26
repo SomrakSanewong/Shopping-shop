@@ -254,24 +254,34 @@
                 <h4>Order Summary</h4>
 
                 <div class="summary-item">
-                    <img src="test.png">
+                    <img src="assets/imang/test.jpg">
                     <div>
                         <h5>Lorem Ipsum Dolor</h5>
                         <p>Color: Black | Size: M</p>
-                        <span>1 × $89.99</span>
+
+                        <div class="summary-price-row">
+                            <span class="qty">1 ×</span>
+                            <span class="price">$89.99</span>
+                        </div>
+
                     </div>
                 </div>
 
+
                 <div class="summary-item">
-                    <img src="test.png">
+                    <img src="assets/imang/test.jpg">
                     <div>
                         <h5>Sit Amet Consectetur</h5>
                         <p>Color: White | Size: L</p>
-                        <span>2 × $59.99</span>
+
+                        <div class="summary-price-row">
+                            <span class="qty">2 ×</span>
+                            <span class="price">$59.99</span>
+                        </div>
+
                     </div>
                 </div>
 
-                <hr>
 
                 <div class="summary-row"><p>Subtotal</p><span>$209.97</span></div>
                 <div class="summary-row"><p>Shipping</p><span>$9.99</span></div>
@@ -286,9 +296,17 @@
                     <input type="text" placeholder="Promo Code">
                     <button>Apply</button>
                 </div>
-
+                <hr>
                 <div class="secure">
-                    <i class="bi bi-shield-check"></i> Secure Checkout
+                    <i class="bi bi-shield-check"></i>
+                    <span class="secure-checkout">Secure Checkout</span>
+                </div>
+
+                <div class="secure-icons">
+                    <i class="bi bi-credit-card-2-front"></i>
+                    <i class="bi bi-credit-card"></i>
+                    <i class="bi bi-paypal"></i>
+                    <i class="bi bi-apple"></i>
                 </div>
             </div>
         </div>

@@ -26,61 +26,12 @@
     <footer class="footer light-background">
         <?php include './footer/footerTop.php' ?>
     </footer>
+    <button class="scroll-to-top" id="scrollTopBtn">
+        <i class="bi bi-chevron-up"></i>
+    </button>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        function initQuantity() {
-            const quantityBoxes = document.querySelectorAll(".cart-qty");
-
-            quantityBoxes.forEach((box) => {
-                const minus = box.querySelector(".quantity-minus");
-                const plus = box.querySelector(".quantity-plus");
-                const input = box.querySelector(".quantity-number");
-
-                if (!minus || !plus || !input) return;
-                minus.addEventListener("click", () => {
-                    let value = parseInt(input.value) || 1;
-                    value = Math.max(1, value - 1);
-                    input.value = value;
-                });
-                plus.addEventListener("click", () => {
-                    let value = parseInt(input.value) || 1;
-                    value = Math.min(99, value + 1);
-                    input.value = value;
-                });
-
-                input.addEventListener("input", () => {
-                    input.value = input.value.replace(/[^0-9]/g, "");
-                });
-
-                function validate() {
-                    let value = parseInt(input.value);
-
-                    if (isNaN(value) || input.value.trim() === "") {
-                        input.value = 1;
-                        return;
-                    }
-
-                    if (value < 1) input.value = 1;
-                    else if (value > 99) input.value = 99;
-                }
-
-                input.addEventListener("keydown", (e) => {
-                    if (e.key === "Enter") {
-                        validate();
-                        input.blur();
-                    }
-                });
-
-                input.addEventListener("blur", validate);
-            });
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            initQuantity();
-        });
-    </script>
-
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
